@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>environmental information</title>
+    <link rel="stylesheet" href="app.css">
+</head>
+
+<body>
+
+
+    <h1 class="Heading"> Environmental projection </h1>
+
+
+    <script>
+        getData()
+        async function getData() {
+            const response = await fetch('/api');
+            const data = await response.json();
+            console.log(data)
+        }
+    </script>
+
+
+
+    This web application would track the carbon emmission from county and would get information regarding the selected
+    county the users picked
+
+    <p>The field below would require the perfer <b>county</b> listed and the <b>date</b> the user would like to choose
+    </p>
+
+    <form>
+
+        <div>
+            <label> Set the perfer date: </label>
+            <input type="date-local" name="date">
+        </div>
+
+
+
+        <div>
+            <label for="country">Choose your perferable countries :</label>
+            <input list="countries" name="country" id="country">
+            <datalist id="countries">
+                <option value="China">
+                <option value="Russia">
+                <option value="France">
+                <option value="Britian">
+                <option value="United State">
+            </datalist>
+        </div>
+
+
+
+
+
+        <input type="Submit" value="Submit" class="button" />
+    </form>
+
+
+</body>
+
+</html>
